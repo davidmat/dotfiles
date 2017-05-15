@@ -1,0 +1,17 @@
+"*":
+  autosave:
+    enabled: true
+  core:
+    closeDeletedFileTabs: true
+    projectHome: "/Users/dmat/Developer/"
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Fira Code"
+    softWrap: true
+  "exception-reporting":
+    userId: "52d7fff4-2ffa-46fc-9a08-88e24758cada"
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
