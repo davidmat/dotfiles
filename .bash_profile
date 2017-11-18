@@ -45,7 +45,6 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 ## Shell Options
-## Shell Options
 for option in autocd globstar nocaseglob histappend cdspell; do
 	shopt -s "$option";
 done;
@@ -54,6 +53,10 @@ done;
 ## `nocaseglob`: Case-insensitive globbing (used in pathname expansion)
 ## `histappend`: Append to the Bash history file, rather than overwriting it
 ## `cdspell`: Autocorrect typos in path names when using `cd`
+
+## Locale Settings
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
 
 ## Completion
 if [ -f /usr/local/share/bash-completion/bash_completion ]; then
