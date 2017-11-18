@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+## Enable Colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+## Editor
+if [[ -n $SSH_CONNECTION ]]; then
+   export VISUAL='vi';
+   export EDITOR=$VISUAL;
+else
+  export VISUAL='vim';
+  export EDITOR=$VISUAL;
+fi;
+
+## History
+export HISTCONTROL=erasedups;
+export HISTSIZE=-1;
+export HISTFILESIZE=-1;
+
+## Locale Settings
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+## Prompt
+PROMPT_USER_COLOR="$(tput setaf 4)"; # Blue
+PROMPT_HOST_COLOR="$(tput setaf 2)"; # Green
+PROMPT_DIR_COLOR="$(tput setaf 3)"; # Yellow
+PROMPT_NEUTRAL_COLOR="$(tput setaf 7)"; # WHITE
+
+PS1="\[$PROMPT_USER_COLOR\]\u"; #username
+PS1+="\[$PROMPT_NEUTRAL_COLOR\] at ";
+PS1+="\[$PROMPT_HOST_COLOR\]\h"; #hostname
+PS1+="\[$PROMPT_NEUTRAL_COLOR\] in ";
+PS1+="\[$PROMPT_DIR_COLOR\]\W"; #working dir
+PS1+="\[$PROMPT_NEUTRAL_COLOR\] \$ ";
+export PS1;
+
+PS2="=> ";
+export PS2;
