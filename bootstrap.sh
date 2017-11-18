@@ -6,14 +6,11 @@ cd "$(dirname "${BASH_SOURCE}")";
 function doIt() {
 	rsync \
 		--exclude ".git/" \
-		--exclude ".git/" \
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
-		--exclude "Brewfile" \
 		--exclude "bootstrap.sh" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
-        brew bundle;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -26,4 +23,3 @@ else
 	fi;
 fi;
 unset doIt;
-

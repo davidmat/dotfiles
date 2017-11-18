@@ -1,11 +1,14 @@
-# Bash Customisations
-# -------------------
+#!/usr/bin/env bash
 
-# Enable Colors
+# Bash Customisations
+# 1. Requires bash v4
+# 2. Assumes bash-completion
+
+## Enable Colors
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-## prompt
+## Prompt
 PROMPT_USER_COLOR="$(tput setaf 4)"; # Blue
 PROMPT_HOST_COLOR="$(tput setaf 2)"; # Green
 PROMPT_DIR_COLOR="$(tput setaf 3)"; # Yellow
@@ -22,7 +25,7 @@ export PS1;
 PS2="=> ";
 export PS2;
 
-## $EDITOR
+## Editor
 if [[ -n $SSH_CONNECTION ]]; then
    export VISUAL='vi';
    export EDITOR=$VISUAL;
@@ -30,24 +33,29 @@ else
   export VISUAL='vim';
   export EDITOR=$VISUAL;
 fi;
-alias edit='vim';
 
-## HISTORY
+## History
 export HISTCONTROL=erasedups;
 export HISTSIZE=-1;
 export HISTFILESIZE=-1;
 
-## File Browser
-alias finder='open -a Finder ./';
+## Aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
-## Common tool aliases
-alias ll='ls -lah';
+## Shell Options
+## Shell Options
+for option in autocd globstar nocaseglob histappend cdspell; do
+	shopt -s "$option";
+done;
+## `autocd`: directory is executed as if it were the argument to the cd command
+## `globstar`: `**` recursive globbing
+## `nocaseglob`: Case-insensitive globbing (used in pathname expansion)
+## `histappend`: Append to the Bash history file, rather than overwriting it
+## `cdspell`: Autocorrect typos in path names when using `cd`
 
-## Vagrant
-export VAGRANT_DEFAULT_PROVIDER=vmware_fusion;
-export VAGRANT_VMWARE_CLONE_DIRECTORY="/Users/dmat/Virtual Machines/vagrant";
-
-## Tab completion
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion;
+## Completion
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+  . /usr/local/share/bash-completion/bash_completion
 fi

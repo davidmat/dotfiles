@@ -1,9 +1,9 @@
 [user]
-	name = David Mat
-	email = d@vidm.at
+  name = David Mat
+  email = d@vidm.at
 [color]
-	ui = true
+  ui = true
 [push]
-	default = simple
+  default = simple
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore

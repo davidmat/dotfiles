@@ -5,6 +5,11 @@
     closeDeletedFileTabs: true
     projectHome: "/Users/dmat/Developer/"
     telemetryConsent: "limited"
+    customFileTypes:
+      "source.gfm": [
+        "txt"
+        "text"
+      ]
   editor:
     fontFamily: "Fira Code"
     softWrap: true
