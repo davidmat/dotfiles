@@ -1,6 +1,6 @@
 [color]
-  ui = true
+	ui = true
 [push]
-  default = simple
+	default = simple
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
