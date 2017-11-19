@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+ansible19-playbook(){
+	docker run --rm -it \
+  --name ansible-playbook \
+  -v $(pwd):/ansible/playbooks \
+  -v ~/.ssh/id_rsa:/root/.ssh/id_rsa \
+  -e ANSIBLE_ROLES_PATH=executable/roles \
+  -e ANSIBLE_LIBRARY=executable/library \
+  -e ANSIBLE_FILTER_PLUGINS=executable/plugins/filter \
+	davidmat/ansible-playbook:v1.9.6 -k "$@"
+}
